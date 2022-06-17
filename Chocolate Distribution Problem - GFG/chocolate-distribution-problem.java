@@ -37,6 +37,10 @@ class Solution
 {
     public long findMinDiff (ArrayList<Integer> a, int n, int m)
     {
+        
+        if(m==0 || n==0) return 0;
+        
+        
         Collections.sort(a);
         long min = Integer.MAX_VALUE;
         
