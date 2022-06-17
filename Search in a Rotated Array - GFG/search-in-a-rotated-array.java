@@ -50,9 +50,9 @@ class Solution
         
         
         if(A[0] <= key)
-            return binary(A, 0, index-1, key);
+            return recursiveBinary(A, 0, index-1, key);
             
-        return binary(A, index, A.length-1, key);
+        return recursiveBinary(A, index, A.length-1, key);
         
     }
     
