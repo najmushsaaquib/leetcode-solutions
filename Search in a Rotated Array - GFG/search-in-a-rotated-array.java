@@ -48,13 +48,15 @@ class Solution
             }            
         }
         
-        int stm = binary(A, 0, index-1, key);
-        int mte = binary(A, index, A.length-1, key);
         
-        return Math.max(stm, mte);
+        if(A[0] <= key)
+            return binary(A, 0, index-1, key);
+            
+        return binary(A, index, A.length-1, key);
+        
     }
     
-    
+    // simple binary
     int binary(int[] arr, int low, int high, int key){
         
         while(low <= high){
@@ -72,5 +74,23 @@ class Solution
         
         return -1;         
     }
+    
+    // recursive binary
+    int recursiveBinary(int[] arr, int low, int high, int key){
+        
+        if(high < low)
+            return -1;
+        
+        int mid = low + (high-low)/2;
+        
+        if(arr[mid] == key)
+            return mid;
+            
+        if(key > arr[mid]) 
+            return recursiveBinary(arr, mid+1, high, key);
+        else 
+            return recursiveBinary(arr, low, mid-1, key);
+    }
+    
     
 }
