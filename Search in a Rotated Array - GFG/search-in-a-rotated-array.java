@@ -33,7 +33,7 @@ class Solution
 {
     int search(int A[], int l, int h, int key)
     {
-        int index = -1;
+        int pivot = -1;
         while(l <= h){
         int mid = l + (h-l)/2;
             if(A[mid] > A[h]){
@@ -43,16 +43,17 @@ class Solution
             }
             
             if(l == h){
-                index = l;
+                pivot = l;
                 break;
             }            
         }
         
         
+        
         if(A[0] <= key)
-            return recursiveBinary(A, 0, index-1, key);
+            return recursiveBinary(A, 0, pivot-1, key);
             
-        return recursiveBinary(A, index, A.length-1, key);
+        return recursiveBinary(A, pivot+1, A.length-1, key);
         
     }
     
