@@ -38,8 +38,11 @@ class Solution
     public long findMinDiff (ArrayList<Integer> a, int n, int m)
     {
         
+        // If there are no chocolates or no students
         if(m==0 || n==0) return 0;
         
+        //chocolates can be more then students
+        if(n<m) return -1;
         
         Collections.sort(a);
         long min = Integer.MAX_VALUE;
