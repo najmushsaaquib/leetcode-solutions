@@ -133,24 +133,25 @@ class Tree
         Deque<Node> q = new LinkedList<>();
         q.add(node);
         while(!q.isEmpty()){
-          
             int size = q.size();
           
             for(int i=0; i<size; i++){
               
                 Node current = q.poll();
-                outer.add(current.data);
-             
+                outer.add(0, current.data);
+                    
                 if(current.right != null)
-                    q.add(current.right);
+                    q.add(current.right); 
                     
                 if(current.left != null)
                     q.add(current.left);    
+                
+                  
           }
           
         }
         
-        Collections.reverse(outer);
+        // Collections.reverse(outer);
         return outer;
     }
     
