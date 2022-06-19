@@ -131,33 +131,23 @@ class Tree
         ArrayList<Integer> outer = new ArrayList<Integer>();
         
         Deque<Node> q = new LinkedList<>();
-        
-        q.add(null);
         q.add(node);
-        
         while(!q.isEmpty()){
-                
-            Node current = q.poll();
-            
-            if(current == null){
-                
-                if(q.isEmpty()){
-                    break;
-                } else {
-                    q.add(null);
-                }                
-                
-            } else {
-                
+          
+            int size = q.size();
+          
+            for(int i=0; i<size; i++){
+              
+                Node current = q.poll();
                 outer.add(current.data);
-                
+             
                 if(current.right != null)
                     q.add(current.right);
                     
                 if(current.left != null)
                     q.add(current.left);    
-            }
-        
+          }
+          
         }
         
         Collections.reverse(outer);
