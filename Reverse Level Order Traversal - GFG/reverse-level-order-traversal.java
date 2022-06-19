@@ -151,7 +151,6 @@ class Tree
           
         }
         
-        // Collections.reverse(outer);
         return outer;
     }
     
