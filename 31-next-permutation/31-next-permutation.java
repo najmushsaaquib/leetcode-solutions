@@ -6,12 +6,9 @@ class Solution {
         
         if(peek == -1){
             reverse(nums, 0, n-1);
-            System.out.println(Arrays.toString(nums));
             
         } else {
-            
             int peekEnd = n-1;
-            
             for(int i=n-1; i>=0; i--){
                 if(nums[i] > nums[peek]){
                     peekEnd = i;
@@ -21,7 +18,6 @@ class Solution {
             
             swap(nums, peek, peekEnd);
             reverse(nums, peek+1, n-1);
-            System.out.println(Arrays.toString(nums));
         }
         
     }
