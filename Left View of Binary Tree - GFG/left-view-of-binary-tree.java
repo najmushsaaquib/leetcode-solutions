@@ -125,10 +125,7 @@ class Tree
     ArrayList<Integer> leftView(Node root){
         
         ArrayList<Integer> outer = new ArrayList<>();
-        
-        // int maxLevel = 0;
         view(outer, root, 0);
-        
         return outer;                 
     }
     
